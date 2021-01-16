@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title>Guess A Number Game</title>
+	<style>
+		.btn, .jumbotron {
+			display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+			text-align: center;	
+		}
+		.footer {
+			/* position: fixed; */
+			margin-top: 10px;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			border-radius: 3px;
+			background-color: purple;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Guess A Number</h1>
+			<button id="start-btn" class="btn btn-primary">Start Game</button>
+		</div>
+		<footer class="footer">
+			<p>Developed by Md. Mazharul Hasan Nur<br>
+				Learner<br>
+				FSMERN001<br>
+				Bohubrihi
+			</p>
+		</footer>
+	</div>
+	
+
+
+    <script>
+		let startBtn = document.getElementById('start-btn');
+
+		startBtn.addEventListener('click', myFunc);
+
+    	function myFunc() {
+			function getRandomInt(min, max) {
+    			min = Math.ceil(min);
+    			max = Math.floor(max);
+    			return Math.floor(Math.random() * (max - min) + min);
+    		}
+   			var rand = getRandomInt(1, 5)
+
+			for(let i = 0; i < 3; i++) {
+				var userInput = parseInt(prompt('Input the number you have guessed'));
+				console.log(userInput);
+
+				if(isNaN(userInput)){
+					alert('Pleasue insert a numbur!');
+				}
+				if (userInput < rand) {
+   					var result = "Correct answer is greater!";
+				   	alert(result);
+				   	console.log(`rand = ${rand}`);
+   				} else if(userInput > rand) {
+   					result = "Correct answer is smaller!";
+					alert(result);
+					console.log(`rand = ${rand}`);
+   				} else if (userInput == rand) {
+					result = "You win!!";
+					alert(result);
+					return;
+				} 
+			}
+
+			if(userInput < rand || userInput > rand || isNaN(userInput)) {
+				alert("You Lose!");
+			}
+    	}
+    </script>
+</body>
+
+</html>
