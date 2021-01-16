@@ -15,7 +15,7 @@ let startBtn = document.getElementById('start-btn');
 				console.log(userInput);
 
 				if(isNaN(userInput)){
-					alert('Pleasue insert a numbur!');
+					alert('Pleasue insert a number from 1 to 5 inclusive!');
 				}
 				if (userInput < rand) {
    					var result = "Correct answer is greater!";
