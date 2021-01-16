@@ -11,7 +11,7 @@ let startBtn = document.getElementById('start-btn');
    			var rand = getRandomInt(1, 5)
 
 			for(let i = 0; i < 3; i++) {
-				var userInput = parseInt(prompt('Input the number you have guessed'));
+				var userInput = parseInt(prompt('Input the number from 1 to 5 (inclusive) you have guessed'));
 				console.log(userInput);
 
 				if(isNaN(userInput)){
