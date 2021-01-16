@@ -40,6 +40,6 @@ let startBtn = document.getElementById('start-btn');
 			}
 
 			if(userInput < rand || userInput > rand || isNaN(userInput)) {
-				alert("You Lost! The Correct Answer was " + rand + ". Try Again!"); 
+				alert("You Lost! The Correct Answer Was " + rand + ". Try Again!"); 
 			}
     	}
